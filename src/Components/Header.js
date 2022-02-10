@@ -18,7 +18,8 @@ const Header = () => {
       <Nav.Link href="#home">Home</Nav.Link>
       <Nav.Link href="#features">About Us</Nav.Link>
       <Nav.Link href="#contact">Contact Us</Nav.Link>   
-    
+      <Nav.Link href="#FAQ">FAQ</Nav.Link> 
+      
     <Form className="d-flex">
         <FormControl
           type="search"
