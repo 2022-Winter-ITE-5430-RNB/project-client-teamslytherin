@@ -13,8 +13,7 @@ const FAQS = () => {
         },
         {
             question: 'What are your working hours?',
-            answer: '09:00am to 05:00pm'
-            
+            answer: '09:00am to 05:00pm'            
         },
         {
             question: 'What are your requirements for adopting a pet?',
@@ -41,6 +40,13 @@ const FAQS = () => {
             answer: 'Yes, we accept all major credit cards for adoption fees.'      
         },
         {
+            question: 'Are there requirements following the adoption??',
+            answer: 'Having a companion animal brings rewards and responsibilities.'+
+                    ' Following your pet’s adoption, you will be responsible for making sure your pet is safe and for providing regular veterinary care.'+
+                    ' Be sure your dog has appropriate identification. Provide nutritious food and fresh water for your pet. Make time for exercise, training, and play .' +
+                    ' Finally, enjoy your new life with your new loving companion.'      
+        },
+        {
             question: 'I’d Like To Foster. What Do I Do Next?',
             answer: 'If you are interested in fostering, please complete and submit a volunteer application. '+
              'You will need to complete a volunteer orientation and volunteer at the shelter before becoming a foster volunteer.'      
@@ -63,8 +69,7 @@ const FAQS = () => {
                     return (
                         <EachFAQ>
                             <Question onClick={() => toggleFAQ(index)} key={index}>
-                                <h1>
-                                    <br></br>
+                                <h1>                                    
                                     <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span> 
                                     &nbsp;
                                     {item.question}
