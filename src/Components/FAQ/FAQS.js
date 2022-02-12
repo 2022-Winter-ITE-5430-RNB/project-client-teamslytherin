@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IconContext } from 'react-icons'
 import { FiPlus, FiMinus } from 'react-icons/fi'
-import { FAQSection, Quesiton, Answer, Question, EachFAQ } from './FaqStyling'
+import { FAQHeading, FAQSection, Quesiton, Answer, Question, EachFAQ } from './FaqStyling'
 import { Container } from "react-bootstrap";
 
 const FAQS = () => {
@@ -27,7 +27,7 @@ const FAQS = () => {
         {
             question: 'How long will the adoption process take?',
             answer: 'The entire adoption process varies but the goal is for the adoption to be completed within 2 to 3 days. ' +
-                    'Due to limited space and insurance reasons, only adopters accompanied by A.D.O.P.T. personnel can be brought back to view the animals.'      
+                    'Due to limited space and insurance reasons, only adopters accompanied by Ado-Pet personnel can be brought back to view the animals.'      
         },
         {
             question: 'What if I have questions after I get my new pet home?',
@@ -50,7 +50,7 @@ const FAQS = () => {
             question: 'I’d Like To Foster. What Do I Do Next?',
             answer: 'If you are interested in fostering, please complete and submit a volunteer application. '+
              'You will need to complete a volunteer orientation and volunteer at the shelter before becoming a foster volunteer.'      
-        }
+        }      
     ];
 
     const [clicked, setClicked] = useState(false)
@@ -64,6 +64,7 @@ const FAQS = () => {
 
     return (
         <FAQSection>
+            <FAQHeading>Frequently Asked Questions about Pet Adpotion</FAQHeading>
             <Container>
                 {faqs.map((item, index) => {
                     return (

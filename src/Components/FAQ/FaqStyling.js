@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
+export const FAQHeading = styled.h1`
+    text-align: center;
+    padding: 2rem;
+    font-size: 3rem;        
+`
+
 export const FAQSection = styled.div`   
     background-color: white;
     display: flex;
-    flex-direction: column;        
-    padding: 100px;      
+    flex-direction: column;              
     position: relative;
 `
 
@@ -15,7 +20,7 @@ export const Question = styled.div`
     cursor: pointer;
     padding: 2rem;
     font-size: 2rem;    
-    margin: auto;
+    margin: auto;       
 `
 
 export const Answer = styled.div`    
@@ -24,9 +29,8 @@ export const Answer = styled.div`
     width: 90%;    
     text-align: center;
     cursor: pointer;
-    font-size: 20px; 
-    transition: transform .3s;   
-    margin: auto;
+    font-size: 20px;     
+    margin: auto;    
 `
 
 export const EachFAQ = styled.div`   
