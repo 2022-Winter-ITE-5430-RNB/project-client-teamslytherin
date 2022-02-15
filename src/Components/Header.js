@@ -5,6 +5,7 @@ import FileNotFound from './Home/FileNotFound'
 import Footer from './Home/Footer'
 import Home from './Home/Home'
 import Navigation from './Home/Navigation'
+import AdoptRequest from './Requests/AdoptRequest'
 
 const Header = () => {
   return (    
@@ -13,6 +14,7 @@ const Header = () => {
       <Routes>
         <Route path='/' element={<Home />} />        
         <Route path='FAQS' element={<FAQS />} />
+        <Route path='Create' element={<AdoptRequest />} />
         <Route path='*' element={<FileNotFound />} />
       </Routes>
       <Footer />    
