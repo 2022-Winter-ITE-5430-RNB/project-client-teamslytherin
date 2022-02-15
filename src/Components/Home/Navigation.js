@@ -16,6 +16,9 @@ const Navigation = () => {
         <li>
           <Link to='FAQS'>FAQS</Link>
         </li>
+        <li>
+          <Link to='Creat'>Create New</Link>
+        </li>
       </ul>
     </nav>
   );
