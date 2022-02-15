@@ -20,13 +20,13 @@ const Navigation = () => {
           <Link to='Create'>Create New</Link>
           </li>
           <li>
-          <Link to='events'>Events</Link>
+          <Link to='Events'>Events</Link>
         </li>
         <li>
-          <Link to='about'>About</Link>
+          <Link to='About'>About</Link>
         </li>
         <li>
-          <Link to='raise'>Raise</Link>
+          <Link to='Raise'>Raise</Link>
         </li>
       </ul>
     </nav>
