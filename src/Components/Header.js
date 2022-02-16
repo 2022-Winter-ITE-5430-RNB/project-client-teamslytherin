@@ -8,8 +8,8 @@ import About from './About/About'
 import  Raise from  './Raise/Raise'
 import Home from './Home/Home'
 import Navigation from './Home/Navigation'
+import ContactForm from './ContactForm';
 import AdoptRequest from './Requests/AdoptRequest'
-
 const Header = () => {
   return (    
     <BrowserRouter>    
@@ -18,6 +18,8 @@ const Header = () => {
         <Route path='/' element={<Home />} />        
         <Route path='FAQS' element={<FAQS />} />
         <Route path='Create' element={<AdoptRequest />} />
+        <Route path='Contact' element={<ContactForm />} />
+
         <Route path='*' element={<FileNotFound />} />
         <Route path='events' element={<Events/>} />
         <Route path='About' element={<About />} />
