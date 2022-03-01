@@ -19,6 +19,12 @@ const Navigation = () => {
         <li>
           <Link to='Create'>Create New</Link>
         </li>
+        <li>
+          <Link to='Events'>Events</Link>
+        </li>
+        <li>
+          <Link to='Raise'>Raise</Link>
+        </li>
       </ul>
     </nav>
   );
