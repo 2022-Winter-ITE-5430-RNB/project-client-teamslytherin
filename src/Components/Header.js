@@ -8,6 +8,7 @@ import About from './About/About'
 import  Raise from  './Raise/Raise'
 import Home from './Home/Home'
 import Navigation from './Home/Navigation'
+import Clinics from './Clinic/Clinics'
 import AdoptRequest from './Requests/AdoptRequest'
 
 const Header = () => {
@@ -18,9 +19,11 @@ const Header = () => {
         <Route path='/' element={<Home />} />        
         <Route path='FAQS' element={<FAQS />} />
         <Route path='Create' element={<AdoptRequest />} />
+        <Route path='Contact' element={<ContactForm />} />
         <Route path='Events' element={<Events/>} />
         <Route path='About' element={<About />} />
         <Route path='Raise' element={<Raise />} />
+        <Route path='Clinic' element={<Clinics />} />
         <Route path='*' element={<FileNotFound />} />
       </Routes>
       <Footer />    
