@@ -18,11 +18,10 @@ const Navigation = () => {
         </li>
         <li>
           <Link to='Create'>Create New</Link>
-          </li>
-          <li>
+        </li>
+        <li>
           <Link to='Events'>Events</Link>
         </li>
-        
         <li>
           <Link to='Raise'>Raise</Link>
         </li>
