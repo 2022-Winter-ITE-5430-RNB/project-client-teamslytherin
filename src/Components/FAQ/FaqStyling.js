@@ -40,3 +40,21 @@ export const EachFAQ = styled.div`
     width: 70%;
     margin: auto;
 `
+export const Button = styled.button`
+  color: darkcyan;
+  font-size: 2em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid darkcyan;
+  border-radius: 3px;
+`
+export const PetDesc = styled.div`   
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;    
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;     
+    margin: auto;   
+     
+`

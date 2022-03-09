@@ -10,6 +10,7 @@ import Home from './Home/Home'
 import Navigation from './Home/Navigation'
 import ContactForm from './ContactForm';
 import AdoptRequest from './Requests/AdoptRequest'
+import AdoptDetails from './Adoption/AdoptDetails';
 const Header = () => {
   return (    
     <BrowserRouter>    
@@ -17,7 +18,8 @@ const Header = () => {
       <Routes>
         <Route path='/' element={<Home />} />        
         <Route path='FAQS' element={<FAQS />} />
-        <Route path='Create' element={<AdoptRequest />} />
+        <Route path='Create' element={<AdoptRequest/>} />
+        <Route path='PetDetails' element={<AdoptDetails/>} />
         <Route path='Contact' element={<ContactForm />} />
 
         <Route path='*' element={<FileNotFound />} />

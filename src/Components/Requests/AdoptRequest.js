@@ -5,9 +5,11 @@ import { Form } from 'react-bootstrap'
 import { Dropdown } from 'bootstrap'
 import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
+import { useState } from 'react'
 
 
-const AdoptRequest = () => {
+const AdoptRequest = (props) => {
+  const [petBreed,setPetBreed]=useState(props.breed)
   return (
     <>
     
@@ -22,14 +24,6 @@ const AdoptRequest = () => {
                   />
                 </InputGroup>
                
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="uid">Date of Birth</InputGroup.Text>
-                <FormControl
-                  placeholder="Username"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                />
-              </InputGroup>
               <Form.Select aria-label="Default select example">
                   <option>Pet Type</option>
                   <option value="canine">Canine</option>
@@ -51,13 +45,10 @@ const AdoptRequest = () => {
                   placeholder="DOB"
                   aria-label="DOB"
                   aria-describedby="DOB"
+                  value={''}
                 />
               </InputGroup>
-              <InputGroup>
-                <FormControl aria-label="Dollar amount (with dot and two decimal places)" />
-                <InputGroup.Text>$</InputGroup.Text>
-                <InputGroup.Text>0.00</InputGroup.Text>
-              </InputGroup>
+              
               <p></p>
               <InputGroup>
                 <InputGroup.Text>Vaccination Details</InputGroup.Text>
