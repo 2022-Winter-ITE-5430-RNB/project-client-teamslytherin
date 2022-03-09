@@ -7,7 +7,7 @@ export const EventStylediv = styled.div`
     padding: 10px;
     margin-left: 40px;
     margin-right: 40px;
-    padding-bottom: 2.5rem
+    padding-bottom: 2.5rem;
     position: relative;
     min-height: 100vh;
 `
