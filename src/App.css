@@ -76,3 +76,7 @@ font-family: Cambria;
   .active {
     background-color: #04AA6D;
   }
+  .img-css{
+    height: 250px;
+    width: 500px;
+  }
