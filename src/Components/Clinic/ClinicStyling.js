@@ -15,7 +15,17 @@ export const EachClinic = styled.div`
     margin: auto;
     font-size: 2rem;
     padding: 5x;    
+    font-size: 3rem;
 `
+
+// export const EachClinic = styled.div`   
+//     align-items: center;
+//     border-radius: 15px;
+//     border: 3px ;     
+//     width: 19%;
+//     margin: auto;
+//     font-size: 2rem;    
+// `
 
 export const Searchbox = styled.input.attrs({type: 'text'})`
   width: 100px;
@@ -38,4 +48,8 @@ export const Filter = styled.div`
     width: 100%;
     padding: 10px;   
     font-size : 15;
+`;
+
+export const AllClinics = styled.div`    
+    background-color:#FFFFE0;
 `;

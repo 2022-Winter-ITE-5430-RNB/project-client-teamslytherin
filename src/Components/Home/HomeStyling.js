@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const HomeStylediv = styled.div`    
     margin: auto;    
-    width: 30%;
+    width: 100%;
     border: none;   
     text-align: center;
-    padding: 10px;
-    padding-bottom: 2.5rem
+    padding: 20px;
+    padding-bottom: 2.5rem;
     position: relative;
     min-height: 100vh;
+    background-color: #FFFFE0;
 `
 
 export const FooterStyle = styled.div`
@@ -19,4 +20,9 @@ export const FooterStyle = styled.div`
     bottom: 10;
     width: 100%;
     height: 6rem;                  
+`
+
+export const Image = styled.img`
+  padding: 5px;
+  width: 40%;
 `

@@ -23,7 +23,14 @@ const Navigation = () => {
           <Link to='Raise'>Raise</Link>
         </li>
         <li>
+<<<<<<< HEAD
           <Link to='Contact'>Contact Us</Link>          
+=======
+          <Link to='Clinics'>Clinics</Link>
+        </li>
+        <li>
+          <Link to='Rehome'>Rehome</Link>
+>>>>>>> Srinath
         </li>
       </ul>
     </nav>

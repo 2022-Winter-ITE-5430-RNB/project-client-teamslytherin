@@ -9,56 +9,55 @@ import { useState } from 'react'
 
 
 const AdoptRequest = (props) => {
-  const [petBreed,setPetBreed]=useState(props.breed)
+  const [petBreed, setPetBreed] = useState(props.breed)
   return (
     <>
-    
-    <Container>
-    <Row className="justify-content-md-center ">
-                <InputGroup className="mb-3">
-                  <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                  <FormControl
-                    placeholder="Username"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                  />
-                </InputGroup>
-               
-              <Form.Select aria-label="Default select example">
-                  <option>Pet Type</option>
-                  <option value="canine">Canine</option>
-                  <option value="bird">Bird</option>
-                  <option value="other">Other(Domestic Animal)</option>
-                </Form.Select>
-                <p></p>
-                <InputGroup className="mb-3">
-                <InputGroup.Text id="breed">Breed</InputGroup.Text>
-                <FormControl
-                  placeholder="Breed"
-                  aria-label="Breed"
-                  aria-describedby="Breed"
-                />
-              </InputGroup>
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="dob">Date of Birth</InputGroup.Text>
-                <FormControl
-                  placeholder="DOB"
-                  aria-label="DOB"
-                  aria-describedby="DOB"
-                  value={''}
-                />
-              </InputGroup>
-              
-              <p></p>
-              <InputGroup>
-                <InputGroup.Text>Vaccination Details</InputGroup.Text>
-                <FormControl as="textarea" aria-label="Vaccination Details" />
-              </InputGroup>
-              <p></p>
-              <Button variant="dark">Request</Button>
-              </Row>
-              </Container>
-</>
+      <Container>
+        <Row className="justify-content-md-center ">
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+            <FormControl
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </InputGroup>
+
+          <Form.Select aria-label="Default select example">
+            <option>Pet Type</option>
+            <option value="canine">Canine</option>
+            <option value="bird">Bird</option>
+            <option value="other">Other(Domestic Animal)</option>
+          </Form.Select>
+          <p></p>
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="breed">Breed</InputGroup.Text>
+            <FormControl
+              placeholder="Breed"
+              aria-label="Breed"
+              aria-describedby="Breed"
+            />
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="dob">Date of Birth</InputGroup.Text>
+            <FormControl
+              placeholder="DOB"
+              aria-label="DOB"
+              aria-describedby="DOB"
+              value={''}
+            />
+          </InputGroup>
+
+          <p></p>
+          <InputGroup>
+            <InputGroup.Text>Vaccination Details</InputGroup.Text>
+            <FormControl as="textarea" aria-label="Vaccination Details" />
+          </InputGroup>
+          <p></p>
+          <Button variant="dark">Request</Button>
+        </Row>
+      </Container>
+    </>
   )
 }
 

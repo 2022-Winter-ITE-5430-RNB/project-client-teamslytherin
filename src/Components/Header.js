@@ -10,8 +10,11 @@ import Home from './Home/Home'
 import Navigation from './Home/Navigation'
 import Clinics from './Clinic/Clinics'
 import ContactForm from './ContactForm';
+import Clinics from './Clinic/Clinics'
 import AdoptRequest from './Requests/AdoptRequest'
 import AdoptDetails from './Adoption/AdoptDetails';
+import Rehome from './Rehome/Rehome';
+
 const Header = () => {
   return (    
     <BrowserRouter>    
@@ -24,12 +27,11 @@ const Header = () => {
         <Route path='Events' element={<Events/>} />
         <Route path='PetDetails' element={<AdoptDetails/>} />
         <Route path='Contact' element={<ContactForm />} />
-
+        <Route path='Clinics' element={<Clinics />} />
+        <Route path='Rehome' element={<Rehome />} />
         <Route path='*' element={<FileNotFound />} />
         <Route path='About' element={<About />} />
         <Route path='Raise' element={<Raise />} />
-        <Route path='Clinic' element={<Clinics />} />
-        <Route path='*' element={<FileNotFound />} />
       </Routes>
       <Footer />    
   </BrowserRouter>
