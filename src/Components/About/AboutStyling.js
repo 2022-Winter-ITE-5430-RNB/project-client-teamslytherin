@@ -6,7 +6,7 @@ export const AboutStylediv = styled.div`
     border: none;   
     text-align: center;
     padding: 50px;
-    padding-bottom: 2.5rem
+    padding-bottom: 2.5rem;
     position: relative;
     min-height: 100vh;
 `
