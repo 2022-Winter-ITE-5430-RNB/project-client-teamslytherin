@@ -8,19 +8,7 @@ const Navigation = () => {
           <Link to='/'>Home</Link>
         </li>
         <li>
-          <Link to='About'>About</Link>
-        </li>
-        <li>
-          <Link to='Contact'>Contact Us</Link>
-        </li>
-        <li>
-          <Link to='FAQS'>FAQS</Link>
-        </li>
-        <li>
-          <Link to='Create'>Create New</Link>
-        </li>
-        <li>
-          <Link to='Events'>Events</Link>
+          <Link to='PetDetails'>Pet Details</Link>
         </li>
         <li>
           <Link to='Raise'>Raise</Link>
@@ -30,6 +18,18 @@ const Navigation = () => {
         </li>
         <li>
           <Link to='Rehome'>Rehome</Link>
+        </li>
+        <li>
+          <Link to='FAQS'>FAQS</Link>
+        </li>
+        <li>
+          <Link to='Events'>Events</Link>
+        </li>
+        <li>
+          <Link to='About'>About</Link>
+        </li>
+        <li>
+          <Link to='Contact'>Contact Us</Link>
         </li>
       </ul>
     </nav>

@@ -24,8 +24,6 @@ const Events = () => {
          adoption status with their adoption coordinator (email listed in their bio). 
          </p>
   
-
-
 </EventStylediv>
 )
 };

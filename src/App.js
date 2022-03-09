@@ -9,8 +9,6 @@ import FAQS from './Components/FAQ/FAQS';
 
 
 function App() {
-
-
   return (
     <>
       <Header></Header>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { ClinicHeading,EachClinic,AllClinics } from './ClinicStyling';
 import { useState } from 'react';
 import Search from './Search';
@@ -61,7 +61,7 @@ const Clinics = () => {
                             Timings: {clinic.timings}
                         </tr>
                         <tr>
-                            Rating: {clinic.rating}
+                            Rating: {clinic.rating}              
                         </tr>    
                     </table>
                     <br></br> 

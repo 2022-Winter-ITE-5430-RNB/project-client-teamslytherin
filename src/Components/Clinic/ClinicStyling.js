@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ClinicHeading = styled.h1`
     text-align: center;
     padding: 2rem;
-    font-size: 3rem;
+    font-size: 3rem;        
 `
 
 export const EachClinic = styled.div`   
