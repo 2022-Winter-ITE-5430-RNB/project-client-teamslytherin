@@ -11,6 +11,7 @@ import Navigation from './Home/Navigation'
 import ContactForm from './ContactForm';
 import Clinics from './Clinic/Clinics'
 import AdoptRequest from './Requests/AdoptRequest'
+import Rehome from './Rehome/Rehome';
 
 const Header = () => {
   return (    
@@ -22,6 +23,7 @@ const Header = () => {
         <Route path='Create' element={<AdoptRequest />} />
         <Route path='Contact' element={<ContactForm />} />
         <Route path='Clinics' element={<Clinics />} />
+        <Route path='Rehome' element={<Rehome />} />
         <Route path='*' element={<FileNotFound />} />
         <Route path='events' element={<Events/>} />
         <Route path='About' element={<About />} />

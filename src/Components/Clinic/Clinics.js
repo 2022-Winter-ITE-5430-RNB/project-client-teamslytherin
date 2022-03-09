@@ -1,5 +1,5 @@
 import React from 'react'
-import { ClinicHeading,EachClinic } from './ClinicStyling';
+import { ClinicHeading,EachClinic,AllClinics } from './ClinicStyling';
 import { useState } from 'react';
 import Search from './Search';
 
@@ -42,7 +42,7 @@ const Clinics = () => {
     };    
 
     return (
-        <div>
+        <AllClinics>
         <ClinicHeading> Clinics Around You </ClinicHeading>
         <Search onSearch = {filterTask}/>
         {clinicsList
@@ -62,14 +62,14 @@ const Clinics = () => {
                         </tr>
                         <tr>
                             Rating: {clinic.rating}
-                        </tr>
-                        <br></br>                
+                        </tr>    
                     </table>
-                </EachClinic>
+                    <br></br> 
+                </EachClinic>                
             )
             })
         }   
-        </div>
+        </AllClinics>
     );
 };
     

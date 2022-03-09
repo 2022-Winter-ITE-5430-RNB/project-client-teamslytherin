@@ -7,7 +7,7 @@ export const FAQHeading = styled.h1`
 `
 
 export const FAQSection = styled.div`   
-    background-color: white;
+    background-color:#FFFFE0;
     display: flex;
     flex-direction: column;              
     position: relative;
@@ -35,7 +35,7 @@ export const Answer = styled.div`
 
 export const EachFAQ = styled.div`   
     border-radius: 30px;
-    border: 3px solid white;
+    border: 3px solid #FFFFE0;
     background-color: lightcyan;
     width: 70%;
     margin: auto;
