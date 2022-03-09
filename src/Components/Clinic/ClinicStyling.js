@@ -7,25 +7,13 @@ export const ClinicHeading = styled.h1`
 `
 
 export const EachClinic = styled.div`   
-    text-align: center;
-    border-radius: 30px;
-    border: 3px solid white;
-    /* background-color: lightcyan; */
+    align-items: center;
+    border-radius: 15px;
+    border: 3px ;     
     width: 19%;
     margin: auto;
-    font-size: 2rem;
-    padding: 5x;    
-    font-size: 3rem;
+    font-size: 2rem;    
 `
-
-// export const EachClinic = styled.div`   
-//     align-items: center;
-//     border-radius: 15px;
-//     border: 3px ;     
-//     width: 19%;
-//     margin: auto;
-//     font-size: 2rem;    
-// `
 
 export const Searchbox = styled.input.attrs({type: 'text'})`
   width: 100px;

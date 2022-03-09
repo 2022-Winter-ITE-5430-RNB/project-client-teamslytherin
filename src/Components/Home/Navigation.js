@@ -6,31 +6,30 @@ const Navigation = () => {
       <ul>
         <li>
           <Link to='/'>Home</Link>
-        </li>    
-        <li>
-          <Link to='FAQS'>FAQS</Link>
         </li>
         <li>
           <Link to='PetDetails'>Pet Details</Link>
-          </li>
-          <li>
-          <Link to='Events'>Events</Link>
-        </li>        
-        <li>
-          <Link to='About'>About</Link>
         </li>
         <li>
           <Link to='Raise'>Raise</Link>
         </li>
         <li>
-<<<<<<< HEAD
-          <Link to='Contact'>Contact Us</Link>          
-=======
           <Link to='Clinics'>Clinics</Link>
         </li>
         <li>
           <Link to='Rehome'>Rehome</Link>
->>>>>>> Srinath
+        </li>
+        <li>
+          <Link to='FAQS'>FAQS</Link>
+        </li>
+        <li>
+          <Link to='Events'>Events</Link>
+        </li>
+        <li>
+          <Link to='About'>About</Link>
+        </li>
+        <li>
+          <Link to='Contact'>Contact Us</Link>
         </li>
       </ul>
     </nav>

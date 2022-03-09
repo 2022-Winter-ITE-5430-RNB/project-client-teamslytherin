@@ -5,12 +5,11 @@ import FileNotFound from './Home/FileNotFound'
 import Footer from './Home/Footer';    
 import Events from './Events/Events'
 import About from './About/About'
-import  Raise from  './Raise/Raise'
+import Raise from  './Raise/Raise'
 import Home from './Home/Home'
 import Navigation from './Home/Navigation'
-import Clinics from './Clinic/Clinics'
+import Clinics from './Clinic/Clinics';
 import ContactForm from './ContactForm';
-import Clinics from './Clinic/Clinics'
 import AdoptRequest from './Requests/AdoptRequest'
 import AdoptDetails from './Adoption/AdoptDetails';
 import Rehome from './Rehome/Rehome';
