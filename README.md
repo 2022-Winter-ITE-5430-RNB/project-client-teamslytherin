@@ -1,6 +1,4 @@
 # Team -Slytherin
-# Jasveer Kaur    Events, Raise, About
-# Preeti  AdoptRequest
 # Srinath  FAQs
 
-
+Added API for FAQ Feature with authentication
