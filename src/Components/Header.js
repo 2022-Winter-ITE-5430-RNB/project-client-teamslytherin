@@ -13,6 +13,8 @@ import ContactForm from './ContactForm';
 import AdoptRequest from './Requests/AdoptRequest'
 import AdoptDetails from './Adoption/AdoptDetails';
 import Rehome from './Rehome/Rehome';
+import Login from './Auth/Login';
+import Register from './Auth/Register';
 
 const Header = () => {
   return (    
@@ -31,6 +33,8 @@ const Header = () => {
         <Route path='*' element={<FileNotFound />} />
         <Route path='About' element={<About />} />
         <Route path='Raise' element={<Raise />} />
+        <Route path='Login' element={<Login />} />
+        <Route path='Register' element={<Register />} />
       </Routes>
       <Footer />    
   </BrowserRouter>

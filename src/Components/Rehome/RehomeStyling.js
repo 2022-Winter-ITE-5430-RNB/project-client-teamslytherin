@@ -7,7 +7,7 @@ export const FormStyle = styled.form`
     display: auto;
     align-items: center;    
     min-height: 100vh;
-`
+`;
 
 export const Head = styled.h1`
     color: black;        
@@ -18,8 +18,8 @@ export const Head = styled.h1`
 export const PetCategory = styled.select`
   border-radius: 3px;
   border: 1px solid black;
-  width: 25%;  
-  padding: 12px 20px;  
+  width: 25%;
+  padding: 12px 20px;
   display: inline-block;
   font-size: 16px;
 `;
