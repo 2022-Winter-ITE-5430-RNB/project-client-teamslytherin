@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Navigation = () => {
+const Navigation = () => {  
   return (
     <nav>
       <ul>
@@ -30,6 +30,12 @@ const Navigation = () => {
         </li>
         <li>
           <Link to='Contact'>Contact Us</Link>
+        </li>
+        <li>
+          <Link to='Login'>Login</Link>
+        </li>
+        <li>
+          <Link to='Register'>Register</Link>
         </li>
       </ul>
     </nav>
