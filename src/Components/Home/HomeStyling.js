@@ -21,6 +21,12 @@ export const FooterStyle = styled.div`
     width: 100%;
     height: 6rem;                  
 `
+
+export const Head = styled.h1`
+    font-family : Comic Sans MS;
+    font-size: xx-large;
+`
+
 export const Image = styled.img`
   padding: 5px;
   width: 40%;

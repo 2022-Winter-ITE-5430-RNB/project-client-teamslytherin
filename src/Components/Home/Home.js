@@ -1,12 +1,12 @@
 import React from 'react'
-import { HomeStylediv,Image } from './HomeStyling'
+import { Head, HomeStylediv, Image } from './HomeStyling'
 import adopt from './HomeImages/adopt.png'
 
 
 const Home = () => {
   return (
     <HomeStylediv>
-      <h1> Welcome to Ado-Pet </h1>
+      <Head> Welcome to Ado-Pet </Head>
       <Image src={adopt}/>
     </HomeStylediv>
   )

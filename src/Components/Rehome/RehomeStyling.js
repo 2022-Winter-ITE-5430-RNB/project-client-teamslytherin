@@ -3,9 +3,7 @@ import styled from "styled-components";
 export const FormStyle = styled.form`
     width: 100%;
     background: #FFFFE0; 
-    padding: 100px;
-    display: auto;
-    align-items: center;    
+    padding: 100px; 
     min-height: 100vh;
 `;
 
@@ -108,12 +106,11 @@ export const ChooseImage = styled.input.attrs({type: 'file'})`
     }
 `;
 
-
 export const Image = styled.img`
   float:right;
-  margin-left:60px;
-  margin-right:100px;
-  border: 1px solid #ddd;
+  margin-left:25px;
+  margin-right:15%;
+  border: 2px solid lightcyan;
   border-radius: 4px;
   padding: 5px;
   width: 500px;
