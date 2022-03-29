@@ -1,4 +1,4 @@
-# Team -Slytherin
-# Srinath  FAQs
+# Team Slytherin
 
-Added API for FAQ Feature with authentication
+# Srinath:
+Completed Login and Register with React Components and COnsumed API using axios
