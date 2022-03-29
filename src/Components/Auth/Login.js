@@ -46,13 +46,13 @@ const Login = () => {
       );
       console.log(response);
       console.log(decode(response.data.token));
-      console.log(response.errors.msg);
+      // console.log(response.errors.msg);
       localStorage.setItem('token', response.data.token);
       auth.login();
       navigate('/');
     } catch (err) {            
       set_err_message(err.response.data.errors);
-      console.log(err_message);      
+      console.log(err);      
     }
   };
     
@@ -68,7 +68,7 @@ const Login = () => {
       </Page_Left>
       <Page_Right>
         <Form onSubmit={(e) => onSubmit(e)}>
-          <h1>Sign In</h1><br></br>
+          <h1>Sign In:</h1><br></br>
           <div>
             <Input
               type='email'
@@ -92,7 +92,7 @@ const Login = () => {
           <br></br>
           <Button type='submit' value='Login' /><br></br>
           <h3>
-            <Link to='/register'>Register</Link>
+            <Link to='/register'>Register</Link> as a new User
           </h3>          
           <Error>
             {err_message}

@@ -6,6 +6,8 @@ export const Page_Left = styled.div`
   height: 100%;
   width: 50%;  
   left: 0;
+  align-items: center;
+  align-content: center;
 `;
 
 export const Page_Right = styled.div`
@@ -13,18 +15,16 @@ export const Page_Right = styled.div`
   min-height: 100vh;
   height: 100%;
   width: 50%;
-  z-index: 1;
   position: fixed;
   top: 0;
   right: 0;
-  margin-left: 100px;
+  padding: 5%;
 `;
 
 export const Head = styled.h1`
     color: black;        
-    width: 100%;
-    /* padding: 60px;  */
-    margin-left: 250px;    
+    width: 100%;    
+    margin-left: 18%;     
     font-size: 50px;
     font-family: Comic Sans MS;
 `;
@@ -35,15 +35,16 @@ export const Image = styled.img`
 `
 
 export const Form = styled.form`
-  border: 1ch;
+  border: 0.2ch;
   border-color: black; 
+  border-style: solid;
   width: 100%;
   max-width: 400px;
   padding: 5rem;
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 450px;
+  /* right: 450px; */
   top: 150px;
   background-color: #FFFFE0;
   min-height: 50vh;
