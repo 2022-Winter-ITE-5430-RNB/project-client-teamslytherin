@@ -13,7 +13,7 @@ import Puppy1 from './puppy1'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 
-const AdoptDetails = () => {
+const AdoptDetails = (props) => {
   const navigate = useNavigate();
   const [showEdit, setShowEdit] = useState(false)
   const editClicked = () => {
@@ -22,18 +22,8 @@ const AdoptDetails = () => {
       setShowEdit(true)
     console.log({ showEdit });
   }
-  const petDetails = [
-    {
-      id: 1,
-      name: "Cutie",
-      description: "A nice sweet little puppy",
-      dob: "10/01/2022",
-      breed: "Golden-retriever",
-      petType: "Canine",
-      amount: 300,
-      vaccine: "flu shot- 01.02.2022"
-    }
-  ]
+  const petDetails = useState(props.pet)
+  const sum=0
   return (
     <div>
       <FAQHeading>AdoptDetails</FAQHeading>
@@ -76,13 +66,17 @@ const AdoptDetails = () => {
             </Col>
             <Col>
               {
-                petDetails.map((pet) => {
+               
+                petDetails.map((pet,index) => {
                   console.log(pet.name);
-                  return (
-
-                    <Puppy1 pet={pet} show={showEdit} id={pet.id.toString()} />
-
+                  
+                  return(
+                    index===0?                
+                    <Puppy1 pet={pet} show={showEdit} id={pet._id} />:
+                    <div></div>
+                    
                   )
+                  
                 })}
             </Col>
           </Row>

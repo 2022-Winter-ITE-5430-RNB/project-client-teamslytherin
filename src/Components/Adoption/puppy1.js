@@ -15,7 +15,7 @@ const Puppy1 = (props) => {
         props.show?
         <>
             <FormLabel > Name: </FormLabel>
-            <input type="text" value=  {props.pet.name}/><br/>
+            <input type="text" value=  {props.pet.name} /><br/>
             <FormLabel> Description:  </FormLabel>
             <input type="text" value={props.pet.description} /><br/>
             <FormLabel> Birth Date:  </FormLabel>
