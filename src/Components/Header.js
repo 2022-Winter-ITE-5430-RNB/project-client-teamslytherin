@@ -18,6 +18,7 @@ import Login from './Auth/Login';
 import Logout from './Auth/Logout';
 import Register from './Auth/Register';
 import AuthContext from '../Context/AuthContext';
+import PetDetails from './Adoption/PetDetails'
 
 const Header = () => {
 
@@ -41,7 +42,7 @@ const Header = () => {
         <Route path='Create' element={<AdoptRequest />} />
         <Route path='Contact' element={<ContactForm />} />
         <Route path='Events' element={<Events />} />
-        <Route path='PetDetails' element={<AdoptDetails />} />
+        <Route path='PetDetails' element={<PetDetails />} />
         <Route path='Contact' element={<ContactForm />} />
         <Route path='Clinics' element={<Clinics />} />
         <Route path='Rehome' element={<Rehome />} />
