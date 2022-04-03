@@ -11,9 +11,10 @@ export const FAQSection = styled.div`
     display: flex;
     flex-direction: column;              
     position: relative;
+    min-height: 100vh;
 `
 
-export const Question = styled.div`       
+export const Question = styled.div`
     justify-content: space-between;
     align-items: center;    
     text-align: center;

@@ -1,57 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { IconContext } from 'react-icons'
 import { FiPlus, FiMinus } from 'react-icons/fi'
-import { FAQHeading, FAQSection, Quesiton, Answer, Question, EachFAQ } from './FaqStyling'
+import { FAQHeading, FAQSection, Answer, Question, EachFAQ } from './FaqStyling'
 import { Container } from "react-bootstrap";
+import axios from 'axios';
 
 const FAQS = () => {
 
-    const faqs = [
-        {
-            question: 'Where are you located?',
-            answer: 'Ado-Pet is located in 205 Blvd, Etobicoke, ON M9W 5L7'
-        },
-        {
-            question: 'What are your working hours?',
-            answer: '09:00am to 05:00pm'            
-        },
-        {
-            question: 'What are your requirements for adopting a pet?',
-            answer: '1. Adopter must be at least 21 years of age and have identification ' +
-                    '2. All members of the household should be present for the adoption '                                 
-        },
-        {
-            question: 'What should I bring when I come to adopt an animal?',
-            answer: 'All members of the household must be present to adopt a dog'      
-        },
-        {
-            question: 'How long will the adoption process take?',
-            answer: 'The entire adoption process varies but the goal is for the adoption to be completed within 2 to 3 days. ' +
-                    'Due to limited space and insurance reasons, only adopters accompanied by Ado-Pet personnel can be brought back to view the animals.'      
-        },
-        {
-            question: 'What if I have questions after I get my new pet home?',
-            answer: 'We understand that after you get our pet home, the adjustment period can be difficult. We encourage you to call us with any questions or problems,'+
-            'hopefully, before small problems become big ones! We are very experienced with pet transitions and welcome the opportunity to help make it as smooth for you' +
-            ' and your pet as possible. And even when all is going well, we love getting calls just to know how our “alumni” are doing.'      
-        },
-        {
-            question: 'Do you take credit cards for adoption fees?',
-            answer: 'Yes, we accept all major credit cards for adoption fees.'      
-        },
-        {
-            question: 'Are there requirements following the adoption??',
-            answer: 'Having a companion animal brings rewards and responsibilities.'+
-                    ' Following your pet’s adoption, you will be responsible for making sure your pet is safe and for providing regular veterinary care.'+
-                    ' Be sure your dog has appropriate identification. Provide nutritious food and fresh water for your pet. Make time for exercise, training, and play .' +
-                    ' Finally, enjoy your new life with your new loving companion.'      
-        },
-        {
-            question: 'I’d Like To Foster. What Do I Do Next?',
-            answer: 'If you are interested in fostering, please complete and submit a volunteer application. '+
-             'You will need to complete a volunteer orientation and volunteer at the shelter before becoming a foster volunteer.'      
-        }      
-    ];
+    const [faqs, setFAQS] = useState([]);
+
+    useEffect(() => {
+        sendApiRequest();
+    }, []);
+
+    const sendApiRequest = async () => {
+        try {
+            const response = await axios.get(
+                'http://localhost:5000/api/faqs/'
+            );
+            setFAQS(response.data);
+            console.log(response);
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     const [clicked, setClicked] = useState(false)
 
@@ -70,8 +42,8 @@ const FAQS = () => {
                     return (
                         <EachFAQ>
                             <Question onClick={() => toggleFAQ(index)} key={index}>
-                                <h1>                                    
-                                    <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span> 
+                                <h1>
+                                    <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
                                     &nbsp;
                                     {item.question}
                                 </h1>
@@ -79,7 +51,7 @@ const FAQS = () => {
                             {clicked === index ? (
                                 <Answer>
                                     <p>{item.answer}</p>
-                                </Answer> 
+                                </Answer>
                             ) : null}
                         </EachFAQ>
                     )

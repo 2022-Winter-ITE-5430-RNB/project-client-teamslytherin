@@ -40,4 +40,5 @@ export const Filter = styled.div`
 
 export const AllClinics = styled.div`    
     background-color:#FFFFE0;
+    min-height: 100vh;
 `;
