@@ -2,16 +2,25 @@ import {useState,useEffect} from 'react'
 import axios from 'axios'
 import AdoptDetails from './AdoptDetails'
 
+
 const PetDetails = () => {
+    
+
     const [pet, setPet] = useState([])
+    const [showEdit, setShowEdit] = useState(false)
 
     useEffect(()=>{
+        console.log('in efferc');
         sendAPIRequest();
     },[])
 
     const sendAPIRequest = async()=> {
+        let petid = localStorage.getItem('petid')
+        let strpid = petid.toString();
+        const url = 'http://localhost:5000/api/pets/'+petid
+        console.log(url);
         try {
-            const response = await axios.get('http://localhost:5000/api/pets/624330bbf946edf4e133f8b0')
+            const response = await axios.get(url)
             setPet(response.data);
             
         } catch (error) {
@@ -21,8 +30,11 @@ const PetDetails = () => {
   return (
 
     <div>
-    <AdoptDetails pet= {pet} key = {pet._id}/>
+
+<AdoptDetails pet= {pet}  key = {pet._id}/>
+
     </div>
+    
   )
 }
 
