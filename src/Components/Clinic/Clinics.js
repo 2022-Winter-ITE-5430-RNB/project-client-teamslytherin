@@ -35,23 +35,26 @@ const Clinics = () => {
                 .filter((s) => s.location.toLowerCase().includes(search.toLowerCase()))
                 .map((clinic) => {
                     return (
-                        <EachClinic>
-                            <table>
-                                <tr>
-                                    <h2>{clinic.name}</h2>
-                                </tr>
-                                <tr>
-                                    Location: {clinic.location}
-                                </tr>
-                                <tr>
-                                    Timings: {clinic.timings}
-                                </tr>
-                                <tr>
-                                    Rating: {clinic.rating}
-                                </tr>
-                            </table>
+                        <div>
                             <br></br>
-                        </EachClinic>
+                            <EachClinic>
+                                <table>
+                                    <tr>
+                                        <h2>{clinic.name}</h2>
+                                    </tr>
+                                    <tr>
+                                        Location: {clinic.location}
+                                    </tr>
+                                    <tr>
+                                        Timings: {clinic.timings}
+                                    </tr>
+                                    <tr>
+                                        Rating: {clinic.rating}
+                                    </tr>
+                                </table>
+                                <br></br>
+                            </EachClinic>
+                        </div>
                     )
                 })
             }

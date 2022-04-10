@@ -20,12 +20,10 @@ const Rehome = () => {
     vaccine: ''
   });
 
-  //console.log("rehome");  
   const [myFile, setFile] = useState();
   const { name, description, dob, type, breed, count, vaccine } = formData2;
 
   const onChange = (e) => {
-    //console.log("onChange");
     setFromDate({ ...formData2, [e.target.name]: e.target.value });
   };
 
@@ -50,7 +48,7 @@ const Rehome = () => {
     data.append('name', name);
     data.append('description', description);
     data.append('dob', dob);
-    data.append('type', type);
+    data.append('petType', type);
     data.append('breed', breed);
     data.append('count', count);
     data.append('vaccine', vaccine);
@@ -63,8 +61,6 @@ const Rehome = () => {
         config
       );
       console.log(response);
-      localStorage.setItem('token', response.data.token);
-      //console.log(decode(response.data.token));
       navigate('/');
     } catch (err) {
       console.log(err);
@@ -76,8 +72,11 @@ const Rehome = () => {
     <div>
       <FormStyle onSubmit={(e) => onSubmit(e)}>
         <Head> Raise a request for your pets to be adopted </Head><br></br>
+
         <Image src={rehome} />
+
         <InputText type='text' placeholder='Pet Name' name='name' value={name} onChange={(e) => onChange(e)} /> <br></br><br></br>
+
         <PetCategory aria-label="Default select example" name='type' value={type} onChange={(e) => onChange(e)}>
           <option>Pet Type</option>
           <option value="dog">Dogs</option>
@@ -85,24 +84,25 @@ const Rehome = () => {
           <option value="bird">Bird</option>
           <option value="other">Other(Domestic Animal)</option>
         </PetCategory><br></br><br></br>
+
+        <InputText type='text' placeholder='Breed' name='breed' value={breed} onChange={(e) => onChange(e)} /> <br></br><br></br>
+
+        <InputText type='text' placeholder='Vaccination' name='vaccine' value={vaccine} onChange={(e) => onChange(e)} /> <br></br> <br></br>
+
         <div>
-          <Label>Birthday:  </Label>
+          <Label>Birthday:</Label> &nbsp;
           <InputDate type="date" id="birthday" name='dob' value={dob} onChange={(e) => onChange(e)} /> <br></br> <br></br>
         </div>
+
         <InputText type='text' placeholder='Enter number of pets' name='count' value={count} onChange={(e) => onChange(e)} /> <br></br> <br></br>
+
         <InputTextArea placeholder='Enter a description here' name='description' value={description} onChange={(e) => onChange(e)} /> <br></br><br></br>
 
-        <Label>Is the Pet Vaccinated:</Label><br></br>
-        <Vaccine type="radio" id="Yes" name="vaccine" value={vaccine} onChange={(e) => onChange(e)} />
-        <Label for="Yes"> Yes </Label> &nbsp;&nbsp;
-        <Vaccine type="radio" id="No" name="vaccine" value={vaccine} onChange={(e) => onChange(e)} />
-        <Label for="No"> No </Label><br></br><br></br>
-
         <Label>Upload an image of your Pet:</Label>
-        <ChooseImage type="file" id="img" name="img" accept="image/*" onChange={(e) => onChange2(e)} /><br></br>
-        <UploadImage type="button">Upload</UploadImage><br></br><br></br><br></br>
+        <ChooseImage type="file" id="img" name="myFile" accept="image/*" onChange={(e) => onChange2(e)} /><br></br>
 
-        <SubmitRehome type='submit' >Rehome</SubmitRehome>
+        <SubmitRehome type='submit' >Rehome</SubmitRehome> <br></br>
+
       </FormStyle>
     </div>
   )

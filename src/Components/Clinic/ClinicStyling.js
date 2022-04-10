@@ -6,13 +6,15 @@ export const ClinicHeading = styled.h1`
     font-size: 3rem;        
 `
 
-export const EachClinic = styled.div`   
-    align-items: center;
-    border-radius: 15px;
-    border: 3px ;     
+export const EachClinic = styled.div`               
     width: 19%;
-    margin: auto;
-    font-size: 2rem;    
+    margin-left: 42.5%;
+    font-size: 2rem;
+    border-style: double;
+    border-color: black;    
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;    
 `
 
 export const Searchbox = styled.input.attrs({type: 'text'})`
