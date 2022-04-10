@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { FormStyle, Head, InputText, InputTextArea, PetCategory, SubmitRehome, Image, 
-         UploadImage, ChooseImage, Label, InputDate, Vaccine } from './RehomeStyling'
+import {
+  FormStyle, Head, InputText, InputTextArea, PetCategory, SubmitRehome, Image,
+  UploadImage, ChooseImage, Label, InputDate, Vaccine
+} from './RehomeStyling'
 import rehome from './RehomeImages/rehome.png'
 
 const Rehome = () => {
@@ -20,7 +22,6 @@ const Rehome = () => {
 
   //console.log("rehome");  
   const [myFile, setFile] = useState();
-
   const { name, description, dob, type, breed, count, vaccine } = formData2;
 
   const onChange = (e) => {
@@ -37,9 +38,11 @@ const Rehome = () => {
     console.log("submit");
     e.preventDefault();
 
+    let token = localStorage.getItem('token');
     let config = {
       headers: {
         'Content-Type': 'multipart/form-data',
+        'x-auth-token': token,
       },
     };
 
@@ -59,11 +62,10 @@ const Rehome = () => {
         data,
         config
       );
-
       console.log(response);
       localStorage.setItem('token', response.data.token);
       //console.log(decode(response.data.token));
-      //navigate('/todos');
+      navigate('/');
     } catch (err) {
       console.log(err);
       console.log(err.response);
@@ -91,9 +93,9 @@ const Rehome = () => {
         <InputTextArea placeholder='Enter a description here' name='description' value={description} onChange={(e) => onChange(e)} /> <br></br><br></br>
 
         <Label>Is the Pet Vaccinated:</Label><br></br>
-        <Vaccine type="radio" id="Yes" name="Vaccine" value={vaccine} onChange={(e) => onChange(e)} />
+        <Vaccine type="radio" id="Yes" name="vaccine" value={vaccine} onChange={(e) => onChange(e)} />
         <Label for="Yes"> Yes </Label> &nbsp;&nbsp;
-        <Vaccine type="radio" id="No" name="Vaccine" value={vaccine} onChange={(e) => onChange(e)} />
+        <Vaccine type="radio" id="No" name="vaccine" value={vaccine} onChange={(e) => onChange(e)} />
         <Label for="No"> No </Label><br></br><br></br>
 
         <Label>Upload an image of your Pet:</Label>
