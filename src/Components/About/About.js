@@ -9,7 +9,7 @@ const About = () => {
 
   const navigate = useNavigate();
 
-  const [formData, setFromDate] = useState({
+  const [formData2, setFromDate] = useState({
     
     ptype: '',
     pbreed: '',
@@ -18,13 +18,17 @@ const About = () => {
     experience: '',
    });
 
-  //console.log("about");  
+  const [myFile, setFile] = useState();
 
-  const { ptype, pbreed, pneeds, phabbits, experience } = formData;
+  const { ptype, pbreed, pneeds, phabbits, experience } = formData2;
 
   const onChange = (p) => {
-    //console.log("onChange");
-    setFromDate({ ...formData, [p.target.ptype]: p.target.value });
+       setFromDate({ ...formData2, [p.target.ptype]: p.target.value });
+  };
+
+  const onChange2 = (p) => {
+    console.log("onChange2");
+    setFile(p.target.files[0]);
   };
 
   
@@ -32,9 +36,11 @@ const About = () => {
     console.log("submit");
     p.preventDefault();
 
+    let token = localStorage.getItem('token');
     let config = {
       headers: {
         'Content-Type': 'multipart/form-data',
+        'x-auth-token': token,
       },
     };
 
@@ -44,6 +50,8 @@ const About = () => {
     data.append('pneeds', pneeds);
     data.append('phabbits', phabbits);
     data.append('experience', experience);
+    data.append('myFile', myFile);
+
     
     try {
       const response = await axios.post(
@@ -53,10 +61,9 @@ const About = () => {
       );
 
       console.log(response);
-      localStorage.setItem('token', response.data.token);
-    
-    } catch (err) {
-      console.log(err);
+      navigate('/');
+     } catch (err) {
+      console.log(err)
       console.log(err.response);
     }
   };
@@ -64,9 +71,11 @@ const About = () => {
       return (
         
       <div>
-        <FormStyle onSubmit={(e) => onSubmit(e)}>
+        <FormStyle onSubmit={(p) => onSubmit(p)}>
           <Head> Share Experience How to Raise a Pet </Head><br></br>
+          
           <Image src={ex} />
+          
           <PetCategory aria-label="Default select example" name='ptype' value={ptype} onChange={(p) => onChange(p)}>
             <option>Pet Type</option>
             <option value="dog">Dogs</option>
@@ -97,39 +106,6 @@ export default About
 
 
 
-
-
-
-// import React from 'react'
-// import { FormStyle, Head, InputText, InputTextArea, PetCategory, SubmitPost, Image } from './AboutStyling'
-// import ex from '../AboutImage/ex.jpg'
-
-// const About = () => {
-
-//   return (
-//     <div>
-//       <FormStyle>
-//         <Head> Share Experience How to Raise a Pet </Head><br></br>
-//         <Image src={ex} />
-//         <PetCategory aria-label="Default select example">
-//           <option>Pet Type</option>
-//           <option value="dog">Dogs</option>
-//           <option value="cat">Cats</option>
-//           <option value="bird">Bird</option>
-//           <option value="other">Other(Domestic Animal)</option>
-//         </PetCategory><br></br><br></br>
-//         <InputText type='text' placeholder='Pet Breed' /> <br></br><br></br>
-//         <InputText type='text' placeholder='Basic needs' /> <br></br> <br></br> 
-//         <InputText type='text' placeholder='Habbits' /> <br></br> <br></br>        
-//         <InputTextArea name="comment" placeholder='Share your experience'></InputTextArea> <br></br><br></br>
-
-//                 <SubmitPost type='button'>Post</SubmitPost>
-//       </FormStyle>
-//     </div>
-//   )
-// }
-
-// export default About
 
 
 

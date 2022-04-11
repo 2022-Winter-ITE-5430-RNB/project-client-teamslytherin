@@ -30,6 +30,9 @@ export const InputText = styled.input.attrs({type: 'text'})`
   display: inline-block;
   font-size: 16px;
 `;
+export const Vaccine = styled.input.attrs({type: 'radio'})`      
+  font-size: 16px;
+`;
 
 export const Label = styled.label`  
   font-size: 18px;

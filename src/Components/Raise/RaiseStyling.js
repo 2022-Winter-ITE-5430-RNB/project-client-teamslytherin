@@ -7,20 +7,25 @@ export const RHead = styled.h1`
     padding-right: 2rem;
     padding-top: 2rem;
     padding-bottom: 0rem;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: Cambria;    
-    margin-left: 5px;     
+    margin-left: 0px;     
 `
 export const RHead2 = styled.div`
     text-align: left;
     padding: 2rem;
     padding-top: 0rem;
-    font-size: 1.3rem;
-    font-family: Cambria;          
+    font-size: 2rem;
+    font-family: Cambria;  
+    margin-left: 0px;        
 `
 export const RaiseSection = styled.div`    
     background-color:#FFFFE0;
     min-height: 100vh;
+    padding: 5rem;
+    font-size: medium;
+    font-family: Cambria; 
+    margin-left: 0px;  
     
 `
 export const Title = styled.div`

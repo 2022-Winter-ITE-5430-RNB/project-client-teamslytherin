@@ -79,7 +79,7 @@ const AdoptDetails = (props) => {
                   
                   return(
                     index===0?                
-                    <Puppy1 pet={pet} id={pet._id} show={showEdit} id={pet._id} />:
+                    <Puppy1 pet={pet} id={pet._id} show={showEdit}  />:
                     <div></div>
                     
                   )
