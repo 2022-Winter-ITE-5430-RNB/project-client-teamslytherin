@@ -3,7 +3,7 @@
 This application will enable the users to search for a pet from the available categories (Dogs, Cats etc.) they are interested in adopting. Users will also have an opportunity to learn how to take care of their pet and find help in facing minor challenges in raising a pet. There is also a chance to contribute to animal welfare by donating a desired amount.
 The duty of Admin is managing the users and pet adoption requests. 
 
-# Team-Slytherin-Server
+# Team-Slytherin
 # Srinath --
 1. Login - (Login to access Adopet)
 2. Register - (Register as a new user in Adopet)
