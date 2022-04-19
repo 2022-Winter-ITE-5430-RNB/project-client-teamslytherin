@@ -24,7 +24,11 @@ export const FooterStyle = styled.div`
 
 export const Head = styled.h1`
     font-family : Comic Sans MS;
-    font-size: xx-large;
+    font-size: xx-large;    
+    padding: 1%;
+    width: 30%;
+    margin: auto;
+    background-color: lightcyan;    
 `
 
 export const Image = styled.img`

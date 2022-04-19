@@ -1,75 +1,78 @@
 import styled from "styled-components";
 
 export const EventStylediv = styled.div`    
-   margin: auto;
-    font-size: medium;
-    font-family: Cambria;
-    border: none;  
-    background-color:#FFFFE0; 
-    text-align: left;
-    padding: 20px;
-    margin: auto;
-    
-    padding-bottom: 2.5rem
+    margin: auto;    
+    width: 100%;
+    border: none;   
+    text-align: center;
+    padding: 5rem;
+    padding-bottom: 2.5rem;
     position: relative;
     min-height: 100vh;
+    background-color: #FFFFE0;
 `
 
-export const First = styled.div`   
-    text-align: center; 
-    font-size: medium;
-    font-family: Cambria;
-    margin-left: 5px;
-     width: 474px;
-    height: 320px;
-    padding: 0px;
-    border: 1px solid black; 
-    border-radius: 4px; 
-    background-color: lightcyan;
+
+export const Head = styled.h1`
+    font-family : Cambria;
+    font-size: xx-large;
+    text-align: center;
+`
+
+export const Image = styled.img`
+  padding: 5px;
+  width: 40%;
+`
+
+export const EventHeading = styled.h1`
+    text-align: center;
+    padding: 2rem;
+    font-size: 3rem;        
+`
+
+export const Button = styled.button`
+  color: darkcyan;
+  font-size: 2em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid darkcyan;
+  border-radius: 3px;
+`
+export const Input = styled.input`
+
+  font-size:1.5em;
+  margin: .5em;
+  border: 2px solid darkcyan;
+  border-radius: 1px;
+`
+export const EventDes = styled.div`   
+    justify-content: space-between;
     align-items: center;
- `
- export const Second = styled.div` 
-    text-align: center;   
-    font-size: medium;
-    font-family: Cambria; 
-    margin-left: 479px ; 
-    width: 474px;
-    height: 320px; 
-    padding: 0px;   
-    border: 1px solid black;
-    border-radius: 4px;   
-    background-color: lightcyan; 
+    width: 90%;    
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;     
+    margin: auto;   
+     
+`
+export const Label = styled.label`   
+      color: darkcyan;
     align-items: center;
-   
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;     
+    margin: 1px;   
+     
 `
- 
-export const Third = styled.div`  
-    text-align: center;  
-    font-size: medium;
-    font-family: Cambria;  
-    margin-left: 5px;  
-    width: 474px;
-    height: 320px;  
-    padding: 10px;
-    border: 1px solid black;  
-    border-radius: 4px; 
-    background-color: lightcyan;   
-    align-items: center;
+export const Error = styled.div` 
+  color: red;
+  font-size: 18px;
 `
 
 
 
-export const Fourth = styled.div`  
-text-align: center; 
-font-size: medium;
-font-family: Cambria;
-margin-left: 479px;
-width: 474px;
-height: 320px;
-padding: 0px;
-border: 1px solid black; 
-border-radius: 4px; 
-background-color: lightcyan;   
-align-items: center;
-`
+
+
+
+
 

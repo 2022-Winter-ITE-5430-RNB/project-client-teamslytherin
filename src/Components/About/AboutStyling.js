@@ -74,6 +74,10 @@ export const Image = styled.img`
   width: 500px;
 `
 
+export const Error = styled.div` 
+  color: red;
+  font-size: 18px;
+`
 
 
 

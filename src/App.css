@@ -46,14 +46,13 @@ font-family: Cambria;
   font-family: Cambria;
   }
 
-
   nav ul {
     list-style-type: none;
     margin: 0;
     padding: 10;
     overflow: hidden;
     background-color: lightcyan;    
-    font-size: large;
+    font-size: large;    
   }
   
   nav li {
@@ -64,7 +63,7 @@ font-family: Cambria;
     display: block;  
     color: black;  
     text-align: center;
-    padding: 14px 46px;
+    padding: 10px 35px;
     text-decoration: none;
     
   }

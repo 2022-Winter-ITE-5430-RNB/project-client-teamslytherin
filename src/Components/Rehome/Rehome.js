@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import {
-  FormStyle, Head, InputText, InputTextArea, PetCategory, SubmitRehome, Image,
-  UploadImage, ChooseImage, Label, InputDate
-} from './RehomeStyling'
+import { FormStyle, Head, InputText, InputTextArea, PetCategory, SubmitRehome, Image,
+   ChooseImage, Label, InputDate} from './RehomeStyling'
 import rehome from './RehomeImages/rehome.png'
 
 const Rehome = () => {

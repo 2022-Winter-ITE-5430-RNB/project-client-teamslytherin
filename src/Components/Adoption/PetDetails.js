@@ -7,10 +7,8 @@ const PetDetails = () => {
     
 
     const [pet, setPet] = useState([])
-    const [showEdit, setShowEdit] = useState(false)
-
+    
     useEffect(()=>{
-        console.log('in efferc');
         sendAPIRequest();
     },[])
 

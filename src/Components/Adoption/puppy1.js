@@ -1,13 +1,16 @@
 import React from 'react'
 import { useState } from 'react';
-import { EachFAQ, FAQHeading, FAQSection, Question ,Answer, petDesc, PetDesc} from '../FAQ/FaqStyling';
+import { EachFAQ, FAQHeading, FAQSection, Question ,Answer, petDesc,Input, PetDesc,Button,Label} from '../FAQ/FaqStyling';
+import { Head, Page_Left, Page_Right, Image,  Form,   Password, Error } from '../Auth/AuthStyling'
 import { FormLabel } from 'react-bootstrap';
 import { ButtonGroup } from 'react-bootstrap'
+
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button } from 'bootstrap';
+
 
 const Puppy1 = (props) => {
+ 
   console.log(props.id);
   const navigate = useNavigate();
   const [pet,setPet]= useState(props.pet)
@@ -37,6 +40,7 @@ const Puppy1 = (props) => {
         setVaccine(e.target.value);
       }
       
+      const [err_message, set_err_message] = useState('');  
       let data = {
         id: props.id,
         name: name,
@@ -46,6 +50,7 @@ const Puppy1 = (props) => {
         petType: type,
         vaccine:vaccine
       };
+      
       const updatePet=async ()=>{
         
         try {
@@ -61,8 +66,10 @@ const Puppy1 = (props) => {
           
           navigate('/');
          
-        } catch (error) {
-          console.log(error)
+        } catch (err) {
+          set_err_message(err.response.data.errors)
+          console.log(err)
+          console.log(err.response.data.errors);
         }
     
       }
@@ -71,20 +78,22 @@ const Puppy1 = (props) => {
       {
         props.show?
         <>
-            <FormLabel > Name: </FormLabel>
-            <input type="text" value=  {name} onChange={handleNameChange} /><br/>
-            <FormLabel> Description:  </FormLabel>
-            <input type="text" value={desc} onChange={handleDescChange}/><br/>
-            <FormLabel> Birth Date:  </FormLabel>
-            <input type="text" value= {dob} onChange={handleDobChange}/><br/>
-            <FormLabel> Breed: </FormLabel>
-            <input type="text" value= {breed} onChange={handleBreedChange}/><br/>
-            <FormLabel> Pet Type:  </FormLabel>
-            <input type="text" value={type} onChange={handleTypeChange}/><br/>
-            <FormLabel> Vaccine: </FormLabel>  
-            <input type="text" value={vaccine} onChange={handleVaccineChange} /><br/>
-            <ButtonGroup className="me-2" aria-label="Edit Pet">
-              <button onClick={updatePet}>Save</button>
+            <Label > Name: </Label>
+            <Input type="text" value=  {name} onChange={handleNameChange} /><br/>
+            <Label> Description:  </Label>
+            <Input type="text" value={desc} onChange={handleDescChange}/><br/>
+            <Label> Birth Date:  </Label>
+            <Input type="text" value= {dob} onChange={handleDobChange}/><br/>
+            <Label> Breed: </Label>
+            <Input type="text" value= {breed} onChange={handleBreedChange}/><br/>
+            <Label> Pet Type:  </Label>
+            <Input type="text" value={type} onChange={handleTypeChange}/><br/>
+            <Label > Vaccine: </Label>
+            <Input type="text" value={vaccine} onChange={handleVaccineChange} /><br/>
+            <ButtonGroup className="me-2" aria-label="Edit Pet">           
+              <Button onClick={updatePet}>Save </Button>
+              
+              <Error>{err_message}</Error>
             </ButtonGroup> 
         </>
         :

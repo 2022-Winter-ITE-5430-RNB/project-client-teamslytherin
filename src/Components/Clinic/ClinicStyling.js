@@ -8,12 +8,13 @@ export const ClinicHeading = styled.h1`
 
 export const EachClinic = styled.div`               
     width: 19%;
-    margin-left: 42.5%;
+    margin-left: 42%;
     font-size: 2rem;
     border-style: double;
     border-color: black;    
     display: flex;
     justify-content: center;
+    text-align: center;
     padding: 50px 0;    
 `
 

@@ -1,129 +1,135 @@
-import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import { init } from "@emailjs/browser";
+import { toast } from "react-toastify";
+import "../assets/css/contact.css";
 
-const FORM_ENDPOINT = "";
+import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
+import React, { useEffect, useState } from "react";
+toast.configure();
+init("Mf5M0Lt8CZkqgB4Rw");
 
+// const getUsers = async () => {
+//   const response = await axios.get("http://localhost:5000/api/feedbacks/");
+//   setUsers(response.data);
+//   console.log(response.data);
+//   console.log("--test");
+// };
 
-const ContactForm = () => {
+// useEffect(() => {
+//   getUsers();
+// }, []);
 
-  const [submitted, setSubmitted] = useState(false);
+export default function ContactUs() {
+  const url = "http://localhost:5000/api/contact";
+  const [users, setUsers] = useState([]);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-  const handleSubmit = () => {
-
-    setTimeout(() => {
-
-      setSubmitted(true);
-
-    }, 100);
-
+  function handle(e) {
+    const newdata = { ...data };
+    newdata[e.target.id] = e.target.value;
+    setData(newdata);
+    console.log(newdata);
+  }
+  // function submit(e) {}
+  const sendEmail = (e) => {
+    e.preventDefault();
+    axios
+      .post(url, {
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+      })
+      .then((res) => {
+        console.log(res.data);
+      });
+    emailjs
+      .sendForm(
+        "service_2v1rlvo",
+        "template_z0j54tg",
+        e.target,
+        "Mf5M0Lt8CZkqgB4Rw"
+      )
+      .then(
+        (result) => {
+          //   console.log(result.text);
+          toast.success("Message sent Successfully", {
+            position: toast.POSITION.TOP_CENTER,
+          });
+        },
+        (error) => {
+          //   console.log(error.text);
+          toast.error("Message not sent ,Something wrong", {
+            position: toast.POSITION.TOP_CENTER,
+          });
+        }
+      );
   };
 
-
-  if (submitted) {
-
-    return (
-
-      <>
-
-        <div className="text-2xl">Thank you!</div>
-
-        <div className="text-md">We'll be in touch soon.</div>
-
-      </>
-
-    );
-
-  }
-
-
   return (
-
-    <section class="mb-4">
-
-
-    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-   
-    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-        a matter of hours to help you.</p>
-
-    <div class="row">
-
-     
-        <div class="col-md-9 mb-md-0 mb-5">
-            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-  
-                <div class="row">
-
-               
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <input type="text" id="name" name="name" class="form-control"/>
-                            <label for="name" class="">Your name</label>
-                        </div>
-                    </div>
-              
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <input type="text" id="email" name="email" class="form-control"/>
-                            <label for="email" class="">Your email</label>
-                        </div>
-                    </div>
-                
-
-                </div>
-          
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form mb-0">
-                            <input type="text" id="subject" name="subject" class="form-control"/>
-                            <label for="subject" class="">Subject</label>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="row">
-
-                  
-                    <div class="col-md-12">
-
-                        <div class="md-form">
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                            <label for="message">Your message</label>
-                        </div>
-
-                    </div>
-                </div>
-            </form>
-
-            <div class="text-center text-md-left">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+    <div className="contact-outer">
+      <h1>CONTACT US</h1>
+      <div className="container contact">
+        <form onSubmit={sendEmail}>
+          <div className="row pt-5 mx-auto">
+            <div className="col-8 form-group mx-auto">
+              <input
+                type="text"
+                className="input"
+                onChange={(e) => handle(e)}
+                placeholder="Name"
+                id="name"
+                name="name"
+              />
             </div>
-            <div class="status"></div>
-        </div>
-  
-        <div class="col-md-3 text-center">
-            <ul class="list-unstyled mb-0">
-                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>San Francisco, CA 94126, USA</p>
-                </li>
-
-                <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p>+ 01 234 567 89</p>
-                </li>
-
-                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>adopet@.com</p>
-                </li>
-            </ul>
-        </div>
-   
-
+            <div className="col-8 form-group pt-2 mx-auto">
+              <input
+                type="email"
+                className="input"
+                placeholder="Email Address"
+                onChange={(e) => handle(e)}
+                id="email"
+                name="email"
+              />
+            </div>
+            <div className="col-8 form-group pt-2 mx-auto">
+              <input
+                type="text"
+                className="input"
+                placeholder="Subject"
+                onChange={(e) => handle(e)}
+                id="subject"
+                name="subject"
+              />
+            </div>
+            <div className="col-8 form-group pt-2 mx-auto msg">
+              <textarea
+                className="holder"
+                cols="30"
+                rows="8"
+                placeholder="Your message"
+                onChange={(e) => handle(e)}
+                name="message"
+                id="message"
+              ></textarea>
+            </div>
+            <div className="col-8 pt-3 mx-auto">
+              <input
+                type="submit"
+                className="submit btn btn-info"
+                // className="btn btn-info"
+                value="Send Message"
+              ></input>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-
-</section>
-
   );
-
-};
-
-
-export default ContactForm;
+}

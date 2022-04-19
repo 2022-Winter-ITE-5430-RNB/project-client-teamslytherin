@@ -1,0 +1,164 @@
+.feedback {
+  background-color: cadetblue;
+  text-align: center;
+}
+
+.feedback input {
+  padding: 6px 45px;
+  margin: 11px;
+  font-size: 1.5rem;
+}
+
+.feedback label {
+  font-size: 2rem;
+  /* float: left; */
+  margin: auto 40%;
+  color: azure;
+}
+.submit {
+  background-color: #da532b;
+  font-size: 1.5rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.reset {
+  background-color: #2b85da;
+  font-size: 1.5rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.feedback textarea {
+  width: 300px;
+  height: 100px;
+}
+blockquote {
+  margin: 0;
+  padding: 30px;
+  width: 500px;
+  background-color: #db532b;
+  color: white;
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: background-color 0.6s linear;
+}
+
+blockquote:after {
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 100%;
+  border: solid transparent;
+  border-top-color: #da532b;
+  border-left-color: #da532b;
+  border-width: 10px;
+  left: 10%;
+}
+
+.leftq {
+  top: -25px;
+  left: 5px;
+}
+.rightq {
+  bottom: -10px;
+  right: 5px;
+}
+
+.feedback img {
+  float: left;
+  margin-right: 20px;
+}
+.feedback h2 {
+  color: white;
+  margin: 8px 6px 11px;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  width: 500px;
+  font-size: 1.5rem;
+  padding: 13px;
+}
+.login-wrap {
+  width: 100%;
+  margin: auto;
+  max-width: 466px;
+  min-height: 498px;
+  position: relative;
+  background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg)
+    no-repeat center;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.login-html {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 33px 70px 50px 70px;
+  background: rgba(40, 57, 101, 0.9);
+}
+.feedbackH {
+  text-align: center;
+  font-size: 4rem; /*! font-size: ; */
+  font-weight: bold;
+  color: cadetblue;
+}
+
+.oneslide {
+  width: 63%;
+  padding: 28px;
+  border-top: 1px solid cadetblue;
+}
+.user1text,
+.user2text {
+  font-size: 2rem;
+}
+.user1text {
+  padding-right: 46px;
+  color: green;
+}
+.user2text {
+  padding-right: 46px;
+  float: right;
+  color: #2b85da;
+}
+.login-wrap2 {
+  width: 100%;
+  margin: auto;
+  max-width: auto;
+  min-height: 400px;
+  position: relative;
+
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.send {
+  width: 100%;
+  height: 41px;
+  background: burlywood;
+}
+
+.res {
+  width: 100%;
+  height: 123px;
+}
+
+.res input {
+  font-size: 2rem;
+}
+.group2 label {
+  color: white;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+.oneslide h1 {
+  color: #da532b;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bolder;
+}
+.label2 {
+  float: left;
+}
+.label1 label {
+  float: right;
+}
+.heading {
+  text-align: center;
+}

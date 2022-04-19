@@ -1,25 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { EventStylediv, First, Second, Third, Fourth } from './EventStyling'
-import { Container  } from 'react-bootstrap'
-
-import cat2 from './EventImages/c2.jpg'
-
-import dog1 from './EventImages/d1.jpeg'
-import dog4 from './EventImages/d4.jpg'
-import aa from './EventImages/aa.jpg'
-
+import React from 'react'
+import { Head, EventStylediv, Image } from './EventStyling'
+import { useNavigate } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import {useState,useEffect} from 'react'
+import axios from 'axios'
+import EventCard from './EventCard';
 
 
 const Events = () => {
-  return (
-  <EventStylediv>
-  <h1> Meet our Pets at a virtual adoption event</h1>
+   
+const navigate = useNavigate();
+const [events, setEvents] = useState([])
   
+useEffect(()=>{
+    sendAPIRequest();
+},[]);
+
+const sendAPIRequest = async()=> {
+    let eventid = localStorage.getItem('eventid')
+    let strpid = eventid.toString();
+    const url = 'http://localhost:5000/api/events/'
+    console.log(url);
+    try {
+        const response = await axios.get(url)
+        setEvents(response.data);
+       console.log(response.data)
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
+  return (
+    <>
+  <EventStylediv>
+  <Head> Meet our Pets at a virtual adoption event</Head>
+  <br /><br/>
     
-  <p>  The best way to meet our Pets is to attend our monthly adoption events. Our
+  <h3> The best way to meet our Pets is to attend our monthly adoption events. Our
         upcoming schedule is located below. All pet events are listed below.
-       <br /><br />
+       <br /><br/>
       If you are planning to adopt at an event, you can start the process in advance 
       or on site. To start in advance, fill out an application form and follow the instructions
        on the form to submit. Someone from our team will then get you started on our adoption 
@@ -28,45 +51,26 @@ const Events = () => {
        as well as documentation that the specific pet you're interested in will be permitted. 
        We post the dogs and cats attending our events on Facebook at 6pm the day before, but 
        because these lists are subject to change, it is always best to confirm an animal's 
-       attendance and event adoption status with their adoption coordinator (email listed in their bio). 
-         </p>
-         <br/><br/>
-
-       <Container>
-           <First>
-           <h2>Dogs Events </h2>
-           <h3> May 07,2022 at 11:00 AM - 3:00 PM</h3>
-           <img src={dog4} className='img' alt="d4" height="244" width="430"/>
+       attendance and event adoption status with their adoption coordinator (email listed in their bio)
+   </h3>   
+    <br /><br />
            
-           </First>
-           
-           <Second>
-           <h2>Coolest Cats Events </h2>
-           <h3>June 11,2022 at 11:00 AM - 3:00 PM</h3>
-           <img src={cat2} className='img' alt="c2" height="244" widht="460"/>
-           </Second>
-           <Third>
-           <h2>Dog Walk Event </h2>
-           <h3>July 09,2022  11:00 AM --- 3:00 PM</h3>
-           <img src={dog1} className='img' alt="d1" height="244" widht="460"/>
-           </Third>
-           <Fourth>
-           <h2>Sheep Dogs Event </h2>
-           <h3>August 13,2022  11:00 AM --- 4:00 PM</h3>
-           <img src={aa} className='img' alt="sh" height="244" widht="460"/>
-           </Fourth>
+       <div className='container'>
+      <Box sx={{ flexGrow: 1 }}>
+      <Grid container >
+      {events.map((event)=>{
+        return(
+          <EventCard event ={event} key ={event._id}/>
+        )
+      })}
+      </Grid>
+    </Box>
 
-       <h2>If you want to book an Event  <Link to='Contact'>Contact Us</Link>  </h2>
-
-       
-        
-       </Container>
-        
+    </div>     
 
 </EventStylediv>
+ </>
 )
 };
-
-
 
 export default Events;

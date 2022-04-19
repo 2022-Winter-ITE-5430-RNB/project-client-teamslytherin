@@ -17,10 +17,11 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import DeletePet from './DeletePet'
 import PetDetails from './PetDetails'
+import { AdoptSection } from './AdoptionStyling'
 
 const AdoptDetails = (props) => {
   let petid = localStorage.getItem('petid')
-   
+
   const navigate = useNavigate();
   const [showEdit, setShowEdit] = useState(false)
   const editClicked = () => {
@@ -30,67 +31,59 @@ const AdoptDetails = (props) => {
     console.log({ showEdit });
   }
   const petDetails = useState(props.pet)
-  const [showDel,setShowDel]=useState('false')
+  const [showDel, setShowDel] = useState('false')
   const [open, setOpen] = useState(false);
   return (
-    <div>
+    <AdoptSection>
       <FAQHeading>AdoptDetails</FAQHeading>
       <ButtonToolbar aria-label="Action on the pets">
         {
           showEdit ?
-            <></> :
             <ButtonGroup className="me-2" aria-label="Edit Pet">
-              <Button onClick={editClicked}>Edit</Button>
+              <Button onClick={editClicked}>Cancel</Button>
+            </ButtonGroup> :
+            <ButtonGroup className="me-2" aria-label="Edit Pet">
+            &nbsp;&nbsp;&nbsp;<Button onClick={editClicked}>Edit</Button>&nbsp;&nbsp;&nbsp;
             </ButtonGroup>
         }
+        <DeletePet key={petid} ></DeletePet>
 
-        <DeletePet key ={petid} ></DeletePet>
-        
         <ButtonGroup aria-label="Request">
-          <Button onClick={() => navigate('/Rehome')} >Request</Button>
+          <Button onClick={() => navigate('/Rehome')} >Rehome</Button>
         </ButtonGroup>
       </ButtonToolbar>
-      
-
-
+      <br></br>  
       <>
-      <Container>
+        <Container>
           <Row>
             <Col>
-              <Carousel>
-                <Carousel.Item>
-                  <img src={pupimg1} className='img-css' alt="puppy1" />
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img src={pupimg2} className='img-css' alt="puppy2" />
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img src={pupimg3} className='img-css' alt="puppy3" />
-                </Carousel.Item>
-              </Carousel>
-
-
+              {
+                petDetails.map((pet, index) => {
+                  console.log(pet.name);
+                  let url = 'http://localhost:5000/uploads/'
+                  const petPic = !!(pet.petImage) ? url + pet.petImage : pupimg1;
+                  return (
+                    index === 0 ?
+                      <img src={petPic} alt={pet.name} /> :
+                      <div></div>
+                  )
+                })}
             </Col>
             <Col>
               {
-               
-                petDetails.map((pet,index) => {
+                petDetails.map((pet, index) => {
                   console.log(pet.name);
-                  
-                  return(
-                    index===0?                
-                    <Puppy1 pet={pet} id={pet._id} show={showEdit}  />:
-                    <div></div>
-                    
+                  return (
+                    index === 0 ?
+                      <Puppy1 pet={pet} id={pet._id} show={showEdit} /> :
+                      <div></div>
                   )
-                  
                 })}
             </Col>
           </Row>
         </Container>
-
       </>
-    </div>
+    </AdoptSection>
   )
 
 }

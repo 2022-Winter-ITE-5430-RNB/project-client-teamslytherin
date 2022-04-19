@@ -1,20 +1,21 @@
 import React from 'react'
 import { useState } from 'react';
 import { ButtonGroup } from 'react-bootstrap'
-import { ButtonToolbar } from 'react-bootstrap'
-import { FAQHeading, Button, EachFAQ, FAQSection } from '../FAQ/FaqStyling'
-import { Head, Page_Left, Page_Right, Image,  Form,   Password, Error } from '../Auth/AuthStyling'
+import { Button  } from './EventStyling'
+import { Error } from './EventStyling'
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const DeletePet = (props) => {
+const DelEvent = (props) => {
     const [err_message, set_err_message] = useState('');  
-    let petid = localStorage.getItem('petid').toString()
+
+    let eventid = localStorage.getItem('eventid').toString()
     const navigate = useNavigate();
+   
     let data = {
-        id: petid,        
+        id: eventid,        
       };
-      const deletePet=async ()=>{
+      const delEvent=async ()=>{
         
         try {
           let token = localStorage.getItem('token');
@@ -24,10 +25,10 @@ const DeletePet = (props) => {
               'x-auth-token': token,
             },
           };
-          const url = 'http://localhost:5000/api/pets/'+petid;
+          const url = 'http://localhost:5000/api/events/'+eventid;
          const response = await axios.delete(url,config)         
           console.log(response);
-          navigate('/');
+          navigate('/Events');
          
         } catch (err) {
           console.log(err)
@@ -41,13 +42,15 @@ const DeletePet = (props) => {
     <ButtonGroup className="me-2" aria-label="Delete group">
     <Button 
     onClick={()=>{
-      if(window.confirm('Do you want to delete this Pet?')){deletePet()};}}>Delete
+      if(window.confirm('Do you want to delete this Event?')){delEvent()};}}>Delete
       </Button>
      
   </ButtonGroup>
+
   <Error>{err_message}</Error>
+  
   </div>
   )
 }
 
-export default DeletePet
+export default DelEvent

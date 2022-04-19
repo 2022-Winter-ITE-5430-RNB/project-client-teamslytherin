@@ -1,68 +1,76 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
-import AuthContext from '../../Context/AuthContext';
-
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../../Context/AuthContext";
 
 const Navigation = () => {
   const auth = useContext(AuthContext);
-  const navigate = useNavigate();   
+  const navigate = useNavigate();
 
   const onLogout = async (e) => {
     e.preventDefault();
     // const auth = useContext(AuthContext);
-    // const navigate = useNavigate();    
+    // const navigate = useNavigate();
     auth.logout();
-    navigate('/');
-}
+    navigate("/");
+  };
   return (
     <nav>
       <ul>
         {auth.isLoggedIn ? (
           <>
             <li>
-              <Link to='/'>Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to='PetDetails'>Pet Details</Link>
+              <Link to="Raise">Raise</Link>
             </li>
             <li>
-              <Link to='Raise'>Raise</Link>
+              <Link to="Clinics">Clinics</Link>
             </li>
             <li>
-              <Link to='Clinics'>Clinics</Link>
+              <Link to="Rehome">Rehome</Link>
             </li>
             <li>
-              <Link to='Rehome'>Rehome</Link>
+              <Link to="FAQS">FAQS</Link>
             </li>
             <li>
-              <Link to='FAQS'>FAQS</Link>
+              <Link to="Events">Events</Link>
             </li>
             <li>
-              <Link to='Events'>Events</Link>
+              <Link to="Donation">Donation</Link>
             </li>
             <li>
-              <Link to='About'>About</Link>
+              <Link to="About">About</Link>
             </li>
             <li>
-              <Link to='Contact'>Contact Us</Link>
+              <Link to="Contact">Contact Us</Link>
+            </li>
+
+            <li>
+              <Link to="feedback">Testimonials</Link>
             </li>
             <li>
-              <Link to='Logout' onClick={(e) => onLogout(e)}>Logout</Link>
+              <Link to="Logout" onClick={(e) => onLogout(e)}>
+                Logout
+              </Link>
             </li>
           </>
         ) : (
           <>
             <li>
-              <Link to='/'>Login</Link>
+              <Link to="/">Login</Link>
             </li>
             <li>
-              <Link to='Register'>Register</Link>
+              <Link to="Register">Register</Link>
             </li>
             <li>
-              <Link to='About'>About</Link>
+              <Link to="Donation">Donation</Link>
             </li>
             <li>
-              <Link to='Contact'>Contact Us</Link>
+              <Link to="About">About</Link>
+            </li>
+            <li>
+              <Link to="Contact">Contact Us</Link>
             </li>
           </>
         )}
