@@ -41,7 +41,7 @@ const Event1 = (props) => {
               'x-auth-token': token,
             },
           };
-          const response = await axios.put('http://localhost:5000/api/events/'
+          const response = await axios.put('https://ado-pet-server.herokuapp.com/api/events/'
           ,data,config)
           console.log(response);
           

@@ -18,7 +18,7 @@ import Grid from '@mui/material/Grid';
 
 function PetCard(props) {
     const navigate = useNavigate();
-    let url = 'http://localhost:5000/uploads/'
+    let url = 'https://ado-pet-server.herokuapp.com/uploads/'
     const [pet,setPet]= useState(props.pet)
     const petPic = !!(pet.petImage)?url+pet.petImage:pupimg1;
     !!(pet.petImage)?console.log(url+pet.petImage):console.log('')

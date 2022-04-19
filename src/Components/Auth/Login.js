@@ -40,7 +40,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/auth',
+        'https://ado-pet-server.herokuapp.com/api/auth',
         data,
         config
       );

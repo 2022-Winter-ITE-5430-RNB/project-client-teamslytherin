@@ -14,7 +14,7 @@ const Clinics = () => {
     const sendApiRequest = async () => {
         try {
             const response = await axios.get(
-                'http://localhost:5000/api/clinics'
+                'https://ado-pet-server.herokuapp.com/api/clinics'
             );
             setClinics(response.data);
             console.log(response);

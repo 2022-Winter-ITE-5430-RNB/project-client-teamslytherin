@@ -61,7 +61,7 @@ const Puppy1 = (props) => {
               'x-auth-token': token,
             },
           };
-          const response = await axios.put('http://localhost:5000/api/pets/',data,config)
+          const response = await axios.put('https://ado-pet-server.herokuapp.com/api/pets/',data,config)
           console.log(response);
           
           navigate('/');

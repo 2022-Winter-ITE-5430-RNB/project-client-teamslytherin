@@ -53,7 +53,7 @@ const AEventDetails = (props) => {
 
                 eventDetails.map((event, index) => {
                   console.log(event.title);
-                  let url = 'http://localhost:5000/uploads/'
+                  let url = 'https://ado-pet-server.herokuapp.com/uploads/'
                   const eventPic = !!(event.eImage) ? url + event.eImage : dogImg;
                   return (
                     index === 0 ?

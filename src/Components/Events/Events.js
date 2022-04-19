@@ -19,8 +19,7 @@ useEffect(()=>{
 
 const sendAPIRequest = async()=> {
     let eventid = localStorage.getItem('eventid')
-    let strpid = eventid.toString();
-    const url = 'http://localhost:5000/api/events/'
+    const url = 'https://ado-pet-server.herokuapp.com/api/events/'
     console.log(url);
     try {
         const response = await axios.get(url)

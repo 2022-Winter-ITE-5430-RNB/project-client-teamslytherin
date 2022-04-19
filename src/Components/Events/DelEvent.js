@@ -25,7 +25,7 @@ const DelEvent = (props) => {
               'x-auth-token': token,
             },
           };
-          const url = 'http://localhost:5000/api/events/'+eventid;
+          const url = 'https://ado-pet-server.herokuapp.com/api/events/'+eventid;
          const response = await axios.delete(url,config)         
           console.log(response);
           navigate('/Events');

@@ -15,7 +15,7 @@ const PetDetails = () => {
     const sendAPIRequest = async()=> {
         let petid = localStorage.getItem('petid')
         let strpid = petid.toString();
-        const url = 'http://localhost:5000/api/pets/'+petid
+        const url = 'https://ado-pet-server.herokuapp.com/api/pets/'+petid
         console.log(url);
         try {
             const response = await axios.get(url)

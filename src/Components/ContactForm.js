@@ -21,7 +21,7 @@ init("Mf5M0Lt8CZkqgB4Rw");
 // }, []);
 
 export default function ContactUs() {
-  const url = "http://localhost:5000/api/contact";
+  const url = "https://ado-pet-server.herokuapp.com/api/contact";
   const [users, setUsers] = useState([]);
   const [data, setData] = useState({
     name: "",

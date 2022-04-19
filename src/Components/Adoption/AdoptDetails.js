@@ -60,7 +60,7 @@ const AdoptDetails = (props) => {
               {
                 petDetails.map((pet, index) => {
                   console.log(pet.name);
-                  let url = 'http://localhost:5000/uploads/'
+                  let url = 'https://ado-pet-server.herokuapp.com/uploads/'
                   const petPic = !!(pet.petImage) ? url + pet.petImage : pupimg1;
                   return (
                     index === 0 ?

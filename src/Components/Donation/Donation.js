@@ -22,7 +22,7 @@ const Donations = () => {
   const sendApiRequest = async () => {
     try {
       const response = await axios.get(
-        'http://localhost:5000/api/donations'
+        'https://ado-pet-server.herokuapp.com/api/donations'
       );
       setDonations(response.data);
       console.log(response);
@@ -62,7 +62,7 @@ const Donations = () => {
     };
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/donations',
+        'https://ado-pet-server.herokuapp.com/api/donations',
         data,
         config
       );

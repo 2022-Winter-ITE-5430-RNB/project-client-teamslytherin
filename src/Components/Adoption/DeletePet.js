@@ -24,7 +24,7 @@ const DeletePet = (props) => {
               'x-auth-token': token,
             },
           };
-          const url = 'http://localhost:5000/api/pets/'+petid;
+          const url = 'https://ado-pet-server.herokuapp.com/api/pets/'+petid;
          const response = await axios.delete(url,config)         
           console.log(response);
           navigate('/');

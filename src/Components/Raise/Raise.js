@@ -14,7 +14,7 @@ const Raises = () => {
   const sendApiRequest = async () => {
       try {
           const response = await axios.get(
-              'http://localhost:5000/api/raises'
+              'https://ado-pet-server.herokuapp.com/api/raises'
           );
           setRaises(response.data);
           console.log(response);

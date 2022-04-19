@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../assets/css/feedback.css";
 const Feedback = () => {
-  const url = "http://localhost:5000/api/feedbacks";
+  const url = "https://ado-pet-server.herokuapp.com/api/feedbacks";
   const [users, setUsers] = useState([]);
   const [data, setData] = useState({
     name: "",
@@ -30,7 +30,7 @@ const Feedback = () => {
       });
   }
   const getUsers = async () => {
-    const response = await axios.get("http://localhost:5000/api/feedbacks");
+    const response = await axios.get("https://ado-pet-server.herokuapp.com/api/feedbacks");
     setUsers(response.data);
     console.log(response.data);
     console.log("--test");

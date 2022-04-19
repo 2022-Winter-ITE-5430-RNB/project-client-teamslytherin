@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FormStyle = styled.form`
     width: 100%;
     background: #FFFFE0; 
+    align-items: left;
     padding: 50px;
     min-height: 100vh;
 `;
@@ -10,7 +11,8 @@ export const FormStyle = styled.form`
 export const Head = styled.h1`
     color: black;        
     width: 60%;
-    padding: 5px;    
+    padding: 5px;
+    margin-left:5%;    
 `;
 
 export const PetCategory = styled.select`
@@ -78,6 +80,25 @@ export const Error = styled.div`
   color: red;
   font-size: 18px;
 `
+export const EachS = styled.div`  
+    font-size: 2rem;    
+    justify-content: left;
+    padding: 10px 0;
+    margin-left: 5%;     
+`;
+
+export const EachStep = styled.div`  
+    font-size: 2rem;    
+    justify-content: left;
+    padding: 10px 0;
+    margin-left: 5%;     
+`;
+
+export const Allsteps = styled.div`  
+    font-size: 2rem;
+    justify-content: left;
+    padding: 50px 0; 
+`;
 
 
 
@@ -85,17 +106,3 @@ export const Error = styled.div`
 
 
 
-
-// import styled from "styled-components";
-
-// export const AboutStylediv = styled.div`    
-//     margin: auto;    
-//     width: 50%;
-//     border: none;   
-//     text-align: center;
-//     padding: 50px;
-//     padding-bottom: 2.5rem
-//     position: relative;
-//     min-height: 100vh;
-//     border: 2px;
-// `

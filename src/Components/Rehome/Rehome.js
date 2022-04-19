@@ -54,7 +54,7 @@ const Rehome = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/pets',
+        'https://ado-pet-server.herokuapp.com/api/pets',
         data,
         config
       );

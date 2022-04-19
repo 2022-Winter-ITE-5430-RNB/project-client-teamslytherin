@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 
 function EventCard(props) {
     const navigate = useNavigate();
-    let url = 'http://localhost:5000/uploads/'
+    let url = 'https://ado-pet-server.herokuapp.com/uploads/'
     const [event,setEvent]= useState(props.event)
     const eventPic = !!(event.eImage)?url+event.eImage:dogImg;
    
